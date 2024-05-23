@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+ /* app/assets/stylesheets/application.scss */
+
+header {
+  background-color: rgb(255, 157, 0);
+}
+
+h1 {
+  text-align: center;
+}
+
+ .hamburger-menu {
+    cursor: pointer;
+    display:flex;
+    justify-content: flex-end;
+  }
+  
+  .hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hamburger-icon:before,
+  .hamburger-icon:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger-icon:before {
+    top: -10px;
+  }
+  
+  .hamburger-icon:after {
+    top: 10px;
+  }
+  
+  .opened .hamburger-icon {
+    background-color: transparent;
+  }
+  
+  .opened .hamburger-icon:before {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .opened .hamburger-icon:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+/* *********************** */
+main {
+  background-color: rgb(250, 229, 188);
+}
+/* *********************** */
+footer {
+  background-color: rgb(255, 157, 0);
+}

@@ -1,16 +1,25 @@
+
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>UberTubouti</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <%= csrf_meta_tags %>
+  <title>Your App Name</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header>
+  <h1>ウーバー坪内</h1>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon"></div>
+    </div>
+  </header>
+  <main>
+  </main>
+  <footer>
+    <p>©坪内学園</p>
+  </footer>
+</body>
 </html>
