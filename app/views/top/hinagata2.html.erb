@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <%= csrf_meta_tags %>
+  <title>Your App Name</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header>
+  <h1>ウーバー坪内</h1>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon"></div>
+      <div id="humMenu">
+
+      <input  id="humCheck" type="checkbox">
+      
+      <label  id="humOpen" for="humCheck"><img src="icon.png" alt="メニュー" width="34" height="28"></label>
+      <label  id="humClose" for="humCheck"></label>
+
+      <nav>
+        <ul class="inner">
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">事業内容</a></li>
+          <li><a href="#">アクセス</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <body>
+</body>
+    </div>
+  </header>
+  <main>
+  <h2>ここはサイトの内容にあたる部分</h2>
+  </main>
+  <footer>
+    <p>©坪内学園</p>
+  </footer>
+</body>
+</html>
+
+
+<body>
+    <header class="header">
+      <!-- ヘッダーロゴ -->
+      <div class="logo">ハンバーガーメニュー</div>
+    
+      <!-- ハンバーガーメニュー部分 -->
+      <div class="nav">
+    
+        <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+    
+        <!-- ハンバーガーアイコン -->
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+    
+        <!-- メニュー -->
+        <nav class="nav_content">
+          <ul class="nav_list">
+            <li class="nav_item"><a href="">メニュー1</a></li>
+            <li class="nav_item"><a href="">メニュー2</a></li>
+            <li class="nav_item"><a href="">メニュー3</a></li>
+          </ul>
+        </nav>
+   
+      </div>
+    </header>
+  </body>

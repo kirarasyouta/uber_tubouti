@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerIcon = document.querySelector('.hamburger-icon');
   
     hamburgerMenu.addEventListener('click', function() {
-      this.classList.toggle('opened');
+      $(this).classList.toggle('opened');
     });
   });
   
