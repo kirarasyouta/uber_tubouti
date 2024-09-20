@@ -1,0 +1,52 @@
+<main>
+  <div class="timer_main">
+    <p>到着したら10分タイマーを作動させてください。</p>
+    <button id="startPauseTimer" class="timer_start">タイマー開始/一時停止</button>
+    <div class="time_box">
+      <p id="timerDisplay">10:00</p>
+    </div>
+    <button id="resetTimer" class="reset_timer">リセット</button>
+  </div>
+</main>
+
+<script>
+  let time = 600;
+  let timer = null;
+  let isPaused = true;
+  const display = document.getElementById('timerDisplay');
+
+  document.getElementById('startPauseTimer').addEventListener('click', function() {
+    if (isPaused) {
+      isPaused = false;
+      startTimer();
+    } else {
+      isPaused = true;
+      clearInterval(timer);
+    }
+  });
+
+  document.getElementById('resetTimer').addEventListener('click', function() {
+    clearInterval(timer);
+    time = 600;
+    display.textContent = "10:00";
+    isPaused = true;
+  });
+
+  function startTimer() {
+    timer = setInterval(() => {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      display.textContent = `${minutes}:${seconds}`;
+
+      if (time <= 0) {
+        clearInterval(timer);
+        alert('タイマーが終了しました');
+        isPaused = true;
+      } else {
+        time--;
+      }
+    }, 1000);
+  }
+</script>
