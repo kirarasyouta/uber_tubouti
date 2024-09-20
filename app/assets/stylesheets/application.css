@@ -194,3 +194,107 @@ footer p {
   text-align: center;
   margin: 10px 0 0 0;
 }
+
+/* 北さん担当 */
+/* 10分タイマー画面 */
+.timer_start {
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  font-size: 40px;
+  background-color: #eaff00;
+}
+
+#timerDisplay {
+  margin: 30px;
+}
+
+.time_box {
+  width: 500px;
+  margin: auto;
+  background-color: #6afffd;
+  font-size: 150px;
+}
+
+.reset_timer {
+  width: 100;
+  height: 50px;
+  background-color: red;
+}
+
+.timer_main {
+  padding: 20px;
+  display: block;
+  text-align: center;
+}
+
+/* 注文数確認画面 */
+
+.check_box {
+  display: flex;
+  clear: both;
+  justify-content: center;
+}
+ 
+.check_box_men {
+  float: left;
+  text-align: right;
+  padding: 10px 30px;
+}
+
+.suuryou_kakuninn {
+  display: flex;
+  clear: both;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.suuryou_kakuninn button {
+  width: 300px;
+  height: 150px;
+  background-color: #0011ff;
+  font-size: 50px;
+}
+
+.kakuninn {
+  display: flex;
+  justify-content: center;
+}
+
+/* 注文番号表示画面 */
+
+.search_results,
+.recipient_box {
+  display: flex;
+  justify-content: center;
+}
+
+/* .search_results {
+  
+} */
+
+.search {
+  padding: 10px 50px;
+}
+
+.recipient_box {
+  width: 1000px;
+  border-style: solid;
+  border-width: 2px;
+  /* margin: 30px; */
+}
+
+
+.problem,
+.nonproblem {
+  width: 80px;
+  height: 40px;
+}
+
+.problem {
+  background-color: red;
+}
+
+.nonproblem {
+  background-color: #0011ff;
+}
