@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カート</title>
+    <link rel="stylesheet" href="./ka.css">
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#" class="back-button">&larr; 戻る</a>
+            <h1>カート</h1>
+        </div>
+
+        <div class="cart-item">
+            <img src="https://via.placeholder.com/80" alt="商品1">
+            <div class="details">
+                <h2>料理名1</h2>
+                <p>数量: 2</p>
+                <p>価格: ¥200</p>
+                <p>小計: ¥400</p>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="https://via.placeholder.com/80" alt="商品2">
+            <div class="details">
+                <h2>料理名2</h2>
+                <p>数量: 1</p>
+                <p>価格: ¥500</p>
+                <p>小計: ¥500</p>
+            </div>
+        </div>
+
+        <div class="total">
+            合計: ¥900
+        </div>
+        <button class="button reserve" onclick="showConfirmDialog()">注文を確定する</button>
+        <button class="button cancel" onclick="showCancelDialog()">注文をキャンセル</button>
+    </div>
+
+    <div class="confirm-dialog" id="confirm-dialog">
+        <div class="dialog-content">
+            <p>この内容で注文してもよろしいですか？</p>
+            <button class="button" onclick="confirmOrder()">はい</button>
+            <button class="button cancel" onclick="hideConfirmDialog()">いいえ</button>
+        </div>
+    </div>
+
+    <div class="confirm-dialog" id="cancel-dialog">
+        <div class="dialog-content">
+            <p>キャンセルしますか？</p>
+            <button class="button" onclick="cancelOrder()">はい</button>
+            <button class="button cancel" onclick="hideCancelDialog()">いいえ</button>
+        </div>
+    </div>
+</body>
+</html>

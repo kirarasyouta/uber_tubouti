@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メニュー</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="header">
+        <h1>メニュー</h1>
+        <input type="text" class="search-bar" placeholder="メニューを検索...">
+    </div>
+
+    <div class="menu-container">
+        <!-- 回鍋肉 -->
+        <div class="menu-item">
+            <img src="img/image(1).jpg" alt="回鍋肉">
+            <div class="details">
+                <h3>回鍋肉</h3>
+                <p class="stock">残り在庫: 6皿</p>
+                <p>¥400</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="回鍋肉" data-price="400">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- 海老のチリソース -->
+        <div class="menu-item">
+            <img src="img/image(2).jpg" alt="海老のチリソース">
+            <div class="details">
+                <h3>海老のチリソース</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥400</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="海老のチリソース" data-price="400">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- 明太子パスタ -->
+        <div class="menu-item">
+            <img src="img/image(3).jpg" alt="明太子パスタ">
+            <div class="details">
+                <h3>明太子パスタ</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥400</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="明太子パスタ" data-price="400">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- 厚切りトンカツ -->
+        <div class="menu-item">
+            <img src="img/image(5).jpg" alt="厚切りトンカツ">
+            <div class="details">
+                <h3>厚切りトンカツ</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥500</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="厚切りトンカツ" data-price="500">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- 焼肉定食 -->
+        <div class="menu-item">
+            <img src="img/image(4).jpg" alt="焼肉定食">
+            <div class="details">
+                <h3>焼肉定食</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥450</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="焼肉定食" data-price="450">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- 親子丼 -->
+        <div class="menu-item">
+            <img src="img/image(6).jpg" alt="親子丼">
+            <div class="details">
+                <h3>親子丼</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥350</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="親子丼" data-price="350">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+
+        <!-- オムライス -->
+        <div class="menu-item">
+            <img src="img/image(7).jpg" alt="オムライス">
+            <div class="details">
+                <h3>オムライス</h3>
+                <p class="stock">残り在庫: 5皿</p>
+                <p>¥350</p>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart" data-item="オムライス" data-price="350">カートに追加</button>
+                <button class="order">注文ページへ移動</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#">ホーム</a>
+        <a href="#">注文履歴</a>
+        <a href="#">マイページ</a>
+    </div>
+
+    <!-- カートボタン -->
+    <div class="cart-button">
+        <button id="cart-button">カート (0)</button>
+    </div>
+
+    <!-- カート内容の表示 -->
+    <div class="cart-content" id="cart-content">
+        <h3>カートの中身</h3>
+        <ul id="cart-items">
+            <!-- カートアイテムがここに追加される -->
+        </ul>
+        <p id="cart-total">合計: ¥0</p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
