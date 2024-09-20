@@ -1,0 +1,124 @@
+
+  <main>
+    <h2>注文管理</h2>
+    
+    <!-- 注文個数の表示セクション -->
+    <div class="order-summary">
+      <div class="summary-item">
+        <h3>本日分の注文個数</h3>
+        <p id="today-order-quantity">10</p> <!-- 本日分の注文個数を表示 -->
+      </div>
+      <div class="summary-item">
+        <h3>翌日の注文個数</h3>
+        <p id="tomorrow-order-quantity">15</p> <!-- 翌日の注文個数を表示 -->
+      </div>
+    </div>
+
+    <div class="order-list">
+      <div class="order-item">
+        <p>A弁当<span class="order-quantity"> (数量: 2)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>B弁当<span class="order-quantity"> (数量: 5)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>C弁当<span class="order-quantity"> (数量: 1)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>D弁当<span class="order-quantity"> (数量: 3)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>E弁当<span class="order-quantity"> (数量: 4)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>F弁当<span class="order-quantity"> (数量: 6)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+      <div class="order-item">
+        <p>G弁当<span class="order-quantity"> (数量: 7)</span></p>
+        <button class="status-btn">未完成</button>
+      </div>
+    </div>
+  </main>
+
+
+  
+  <script>
+    document.querySelectorAll('.status-btn').forEach(function(button) {
+      button.addEventListener('click', function() {
+        if (this.textContent === '未完成') {
+          this.textContent = '完成';
+          this.classList.add('completed');
+        } else {
+          this.textContent = '未完成';
+          this.classList.remove('completed');
+        }
+      });
+    });
+
+    document.getElementById('humMenu').addEventListener('click', function(event) {
+      var humCheck = document.getElementById('humCheck');
+      if (event.target !== humCheck) {
+        humCheck.checked = !humCheck.checked;
+      }
+    });
+  </script>
+
+  <style>
+  .order-summary {
+    margin-bottom: 20px; /* 注文管理リストとの間に余白を追加 */
+    padding: 10px;
+    border: 1px solid #ddd; /* 枠線を追加 */
+    border-radius: 8px; /* 角を丸くする */
+    background-color: #f9f9f9; /* 背景色を設定 */
+  }
+
+  .summary-item {
+    margin-bottom: 10px; /* 各項目の間に余白を追加 */
+  }
+
+  .summary-item h3 {
+    font-size: 22px; /* 見出しの文字サイズを大きくする */
+    margin: 0; /* マージンをゼロにする */
+    margin-bottom: 5px; /* 見出しと本文の間に余白を追加 */
+  }
+
+  .summary-item p {
+    font-size: 20px; /* 注文個数の文字サイズを調整 */
+    margin: 0; /* マージンをゼロにする */
+  }
+
+  .order-item {
+    display: flex;
+    align-items: center; /* 商品名とボタンを縦に中央揃え */
+    margin-bottom: 10px; /* 各注文アイテムの間に余白 */
+  }
+
+  .order-item p {
+    font-size: 24px; /* 商品名の文字サイズを大きくする */
+    font-weight: bold; /* 太字にする */
+    margin: 0; /* マージンをゼロにする */
+    margin-right: 20px; /* 商品名とボタンの間に余白を追加 */
+  }
+
+  .order-quantity {
+    font-size: 20px; /* 注文個数の文字サイズを調整 */
+    color: #555; /* 注文個数の色を設定 */
+  }
+
+  .status-btn {
+    font-size: 20px; /* ボタンの文字サイズを大きくする */
+    padding: 10px 20px; /* ボタンのサイズを大きくする */
+    border-radius: 8px; /* ボタンの角を丸くする */
+    cursor: pointer; /* カーソルをポインターに変更 */
+  }
+</style>
+
+
+</body>
+</html>

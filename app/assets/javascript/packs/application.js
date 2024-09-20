@@ -13,10 +13,11 @@ Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerMenu = document.querySelector('#humOpen span::after,#humOpen span::before,#humOpoen span');
     const hamburgerIcon = document.querySelector('.hamburger-icon');
-  
+    console.log("aaaa")
     hamburgerMenu.addEventListener('click', function() {
+      console.log("たたたた")
       $(this).classList.toggle('opened');
     });
   });

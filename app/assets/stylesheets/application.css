@@ -58,13 +58,14 @@ header {
 
 .nav {
   position: absolute;
-  top: 0;
+  top: 0px;
   right: 20px; /* Adjust the right position as needed */
 }
 
 #humMenu {
+  width: auto;
+  height: auto;
   position: absolute;
-  top: 20;
   right: 20px; /* Adjust the right position as needed */
 }
 
@@ -74,7 +75,7 @@ header {
 }
 
 #humOpen {
-  display: block;
+  
   cursor: pointer;
 }
 
@@ -193,4 +194,41 @@ footer li a {
 footer p {
   text-align: center;
   margin: 10px 0 0 0;
+}
+
+/* app/assets/stylesheets/application.css */
+
+/* 商品名を大きくする */
+.item-name {
+  font-size: 24px; /* 商品名のサイズを調整 */
+  font-weight: bold; /* 商品名を太字にする */
+  margin-right: 10px; /* ボタンとの間に余白を設ける */
+}
+
+/* ボタンと横並びにするためのスタイル */
+.order-item {
+  display: flex;
+  align-items: center;
+}
+
+/* ボタンのスタイル（任意で調整） */
+.complete-button {
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.complete-button:hover {
+  background-color: #218838;
+}
+.toy{
+  position: relative;
+  display: flex;
+  justify-content: center; /* 子要素を水平方向に中央揃え */
+  align-items: center;     /* 子要素を垂直方向に中央揃え */
+  padding: 0 20px;
 }

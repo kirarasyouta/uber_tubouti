@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <%= csrf_meta_tags %>
+  <title>問い合わせ確認</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <style>
+    /* 2カラムレイアウト用のスタイル */
+    .container {
+      display: flex;
+    }
+    .left-column {
+      width: 50%;
+      padding: 10px;
+    }
+    .right-column {
+      width: 50%;
+      padding: 10px;
+      border-left: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+  <h1 class="toy">問い合わせ確認画面</h1>
+    <div class="container">
+      <!-- 左側のカラム：問い合わせ一覧 -->
+      <div class="left-column">
+        <h2>問い合わせ一覧</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>名前</th>
+              <th>メールアドレス</th>
+              <th>内容</th>
+              <th>日時</th>
+              <th>詳細</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @inquiries.present? %>
+              <% @inquiries.each do |inquiry| %>
+                <tr>
+                  <td><%= inquiry.id %></td>
+                  <td><%= inquiry.name %></td>
+                  <td><%= inquiry.email %></td>
+                  <td><%= inquiry.content.truncate(20) %></td>
+                  <td><%= inquiry.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+                  <td><%= link_to '表示', inquiry_path(inquiry), remote: true %></td>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="6">問い合わせがありません</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 右側のカラム：問い合わせ詳細 -->
+      <div class="right-column">
+        <h2>問い合わせ詳細</h2>
+        <% if @selected_inquiry %>
+          <p><strong>名前:</strong> <%= @selected_inquiry.name %></p>
+          <p><strong>メールアドレス:</strong> <%= @selected_inquiry.email %></p>
+          <p><strong>内容:</strong> <%= @selected_inquiry.content %></p>
+          <p><strong>日時:</strong> <%= @selected_inquiry.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <% else %>
+          <p>問い合わせを選択してください。</p>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

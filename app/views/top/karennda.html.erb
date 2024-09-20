@@ -1,0 +1,116 @@
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    td {
+      cursor: pointer;
+    }
+
+    .business-day {
+      background-color: #c8e6c9; /* 営業日: 緑 */
+    }
+
+    .non-business-day {
+      background-color: #ffcdd2; /* 非営業日: 赤 */
+    }
+  </style>
+  <main>
+    <h2>営業日設定</h2>
+    <div id="calendar"></div>
+  </main>
+  <script>
+    function createCalendar(id, year, month) {
+      var elem = document.getElementById(id);
+
+      var mon = month - 1; // 月は0から始まる
+      var d = new Date(year, mon);
+
+      var table = '<table><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr><tr>';
+
+      // 空白のセルを追加
+      for (var i = 0; i < d.getDay(); i++) {
+        table += '<td></td>';
+      }
+
+      // カレンダーの日付を追加
+      while (d.getMonth() === mon) {
+        table += `<td class="calendar-day" data-date="${d.toISOString().split('T')[0]}">${d.getDate()}</td>`;
+
+        if (d.getDay() === 6) { // 土曜日で行を終了
+          table += '</tr><tr>';
+        }
+
+        d.setDate(d.getDate() + 1);
+      }
+
+      // 最後の行を空白で埋める
+      if (d.getDay() !== 0) {
+        for (var i = d.getDay(); i < 7; i++) {
+          table += '<td></td>';
+        }
+      }
+
+      table += '</tr></table>';
+
+      elem.innerHTML = table;
+
+      // 保存された営業日/非営業日情報を取得して反映
+      fetch('/get-business-days', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        for (let day of elem.getElementsByClassName('calendar-day')) {
+          let date = day.getAttribute('data-date');
+          if (data[date] === 'non-business') {
+            day.classList.add('non-business-day');
+          } else {
+            day.classList.add('business-day');
+          }
+        }
+      });
+
+      // クリックで営業日/非営業日を切り替え
+      var days = elem.getElementsByClassName('calendar-day');
+      for (var day of days) {
+        day.addEventListener('click', function() {
+          this.classList.toggle('business-day');
+          this.classList.toggle('non-business-day');
+          var status = this.classList.contains('non-business-day') ? 'non-business' : 'business';
+          saveBusinessDay(this.getAttribute('data-date'), status);
+        });
+      }
+    }
+
+    function saveBusinessDay(date, status) {
+      fetch('/save-business-day', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': '<%= form_authenticity_token %>',
+        },
+        body: JSON.stringify({ date: date, status: status })
+      });
+    }
+
+    createCalendar("calendar", 2024, 9); // 例: 2024年9月のカレンダー
+  </script>
+</body>
+</html>

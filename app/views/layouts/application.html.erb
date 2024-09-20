@@ -1,2 +1,70 @@
-
-<%= yield %>
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <%= csrf_meta_tags %>
+  <title>あなたのアプリ名</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>ウーバー坪内</h1>
+    </div>
+    <div id="humMenu" class="humMenu">
+      <input id="humCheck" class="drawer_hidden" type="checkbox">
+      <div class="hum">
+        <label id="humOpen" for="humCheck" class="drawer_open"><span></span></label>
+        <label id="humClose" for="humCheck"></label>
+      </div>
+      <nav>
+        <ul class="inner">
+          <li class="nav_item"><a href="">ホーム</a></li>
+          <li class="nav_item"><a href="">会社概要</a></li>
+          <li class="nav_item"><a href="">事業内容</a></li>
+          <li class="nav_item"><a href="">アクセス</a></li>
+          <li class="nav_item"><a href="">お問い合わせ</a></li>
+          <li class="nav_item"><a href="">ログイン</a></li>
+          <li class="nav_item"><a href="">会員登録</a></li> <!-- 修正しました -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+  <%= yield %>
+  </main>
+  <footer>
+    <ul class="inner">
+      <li class="nav_item"><a href="">ホーム</a></li>
+      <li class="nav_item"><a href="">会社概要</a></li>
+      <li class="nav_item"><a href="">事業内容</a></li>
+      <li class="nav_item"><a href="">アクセス</a></li>
+      <li class="nav_item"><a href="">お問い合わせ</a></li>
+      <li class="nav_item"><a href="">ログイン</a></li>
+      <li class="nav_item"><a href="">会員登録</a></li> <!-- 修正しました -->
+    </ul>
+    <p>©坪内学園</p>
+    <div class="sns-links">
+    <%= link_to "https://www.youtube.com/@user-zp9yz3pc4d", target: "_blank" do %>
+      <%= image_tag "Youtube2.png", alt: "YouTube" %>
+    <% end %>
+    <%= link_to "https://x.com/D4C1869252", target: "_blank" do %>
+      <%= image_tag "X.png", alt: "Twitter" %>
+    <% end %>
+    <%= link_to "https://www.instagram.com/tubouti_uba/?igsh=MWxoeGV3MTVoZmRxYQ%3D%3D", target: "_blank" do %>
+      <%= image_tag "instagram2.png", alt: "Instagram" %>
+      <% end %>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('humMenu').addEventListener('click', function(event) {
+      var humCheck = document.getElementById('humCheck');
+      if (event.target !== humCheck) {
+        humCheck.checked = !humCheck.checked;
+      }
+    });
+  </script>
+</body>
+</html>
